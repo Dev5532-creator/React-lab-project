@@ -1,0 +1,697 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #070711;
+  --card: #11111e;
+  --text: #ffffff;
+  --muted: #9999ad;
+  --purple: #8b5cf6;
+  --cyan: #22d3ee;
+  --border: rgba(255,255,255,.09);
+}
+
+body {
+  background:
+    radial-gradient(
+      circle at 15% 10%,
+      rgba(139,92,246,.15),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(34,211,238,.1),
+      transparent 30%
+    ),
+    var(--bg);
+
+  color: var(--text);
+
+  font-family: "Inter", sans-serif;
+
+  min-height: 100vh;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* NAVBAR */
+
+.navbar {
+  height: 75px;
+
+  padding: 0 7%;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  border-bottom: 1px solid var(--border);
+
+  background: rgba(7,7,17,.8);
+
+  backdrop-filter: blur(15px);
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 10;
+}
+
+.logo {
+  font-family: "Space Grotesk";
+
+  font-size: 23px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+.logo span {
+  color: var(--cyan);
+}
+
+.navLinks {
+  display: flex;
+
+  gap: 12px;
+}
+
+.navLinks button {
+  background: transparent;
+
+  color: #aaaabd;
+
+  border: 0;
+
+  padding: 10px 14px;
+
+  border-radius: 8px;
+}
+
+.navLinks button:hover {
+  color: white;
+
+  background: rgba(255,255,255,.06);
+}
+
+.loginBtn {
+  background: var(--purple) !important;
+
+  color: white !important;
+}
+
+.logoutBtn {
+  color: #fb7185 !important;
+}
+
+/* HERO */
+
+.home {
+  max-width: 1200px;
+
+  margin: auto;
+}
+
+.hero {
+  min-height: 650px;
+
+  padding: 80px 7%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+.badge,
+.heading small,
+.profile small,
+.auth small,
+.postCard small {
+  color: var(--cyan);
+
+  font-size: 11px;
+
+  letter-spacing: 2px;
+
+  font-weight: 700;
+}
+
+.hero h1 {
+  font-family: "Space Grotesk";
+
+  font-size: clamp(50px, 8vw, 90px);
+
+  line-height: .95;
+
+  margin: 25px 0;
+}
+
+.hero h1 span {
+  background:
+    linear-gradient(
+      90deg,
+      var(--purple),
+      var(--cyan)
+    );
+
+  -webkit-background-clip: text;
+
+  background-clip: text;
+
+  color: transparent;
+}
+
+.hero p {
+  max-width: 650px;
+
+  color: var(--muted);
+
+  line-height: 1.7;
+
+  font-size: 18px;
+
+  margin-bottom: 30px;
+}
+
+.heroButtons {
+  display: flex;
+
+  gap: 12px;
+}
+
+.primaryBtn,
+.secondaryBtn {
+  padding: 14px 20px;
+
+  border-radius: 10px;
+
+  border: 0;
+
+  color: white;
+
+  font-weight: 600;
+}
+
+.primaryBtn {
+  background:
+    linear-gradient(
+      135deg,
+      var(--purple),
+      #6366f1
+    );
+}
+
+.primaryBtn:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 30px
+    rgba(139,92,246,.3);
+}
+
+.secondaryBtn {
+  background: transparent;
+
+  border: 1px solid var(--border);
+}
+
+/* STATS */
+
+.stats {
+  display: grid;
+
+  grid-template-columns: repeat(4,1fr);
+
+  border-top: 1px solid var(--border);
+
+  border-bottom: 1px solid var(--border);
+}
+
+.stats div {
+  text-align: center;
+
+  padding: 28px;
+
+  border-right: 1px solid var(--border);
+}
+
+.stats strong {
+  display: block;
+
+  font-size: 28px;
+
+  color: var(--cyan);
+}
+
+.stats span {
+  color: var(--muted);
+
+  font-size: 13px;
+}
+
+/* PAGE */
+
+.page {
+  max-width: 1200px;
+
+  margin: auto;
+
+  padding: 70px 6%;
+}
+
+.heading {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: end;
+
+  margin-bottom: 30px;
+}
+
+.heading h1 {
+  font-family: "Space Grotesk";
+
+  font-size: 48px;
+
+  margin: 10px 0;
+}
+
+.heading p {
+  color: var(--muted);
+}
+
+.count {
+  color: var(--cyan);
+}
+
+/* SEARCH */
+
+.search {
+  width: 100%;
+
+  padding: 17px 20px;
+
+  margin-bottom: 25px;
+
+  background: var(--card);
+
+  color: white;
+
+  border: 1px solid var(--border);
+
+  border-radius: 12px;
+
+  outline: none;
+}
+
+.search:focus {
+  border-color: var(--purple);
+}
+
+/* USERS */
+
+.userGrid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 20px;
+}
+
+.userCard {
+  background: var(--card);
+
+  border: 1px solid var(--border);
+
+  border-radius: 18px;
+
+  padding: 25px;
+
+  transition: .3s;
+}
+
+.userCard:hover {
+  transform: translateY(-5px);
+
+  border-color: var(--purple);
+}
+
+.avatar,
+.largeAvatar,
+.authLogo {
+  display: grid;
+
+  place-items: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--purple),
+      var(--cyan)
+    );
+
+  color: white;
+
+  font-weight: 800;
+}
+
+.avatar {
+  width: 55px;
+
+  height: 55px;
+
+  border-radius: 50%;
+
+  margin-bottom: 18px;
+}
+
+.userCard h2 {
+  font-size: 20px;
+}
+
+.userCard p {
+  color: var(--muted);
+
+  margin: 8px 0;
+}
+
+.username {
+  color: var(--cyan) !important;
+}
+
+.profileBtn,
+.backBtn {
+  margin-top: 15px;
+
+  padding: 11px 15px;
+
+  border: 0;
+
+  border-radius: 9px;
+
+  background: rgba(139,92,246,.15);
+
+  color: #c4b5fd;
+}
+
+/* PROFILE */
+
+.profile {
+  display: flex;
+
+  align-items: center;
+
+  gap: 30px;
+
+  background: var(--card);
+
+  border: 1px solid var(--border);
+
+  padding: 35px;
+
+  border-radius: 20px;
+
+  margin: 30px 0 50px;
+}
+
+.largeAvatar {
+  width: 110px;
+
+  height: 110px;
+
+  border-radius: 50%;
+
+  font-size: 45px;
+}
+
+.profile h1 {
+  font-family: "Space Grotesk";
+
+  font-size: 45px;
+
+  margin: 10px 0;
+}
+
+.profile p {
+  color: var(--muted);
+
+  margin: 6px 0;
+}
+
+.sectionTitle {
+  font-family: "Space Grotesk";
+
+  margin-bottom: 20px;
+}
+
+.postGrid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 20px;
+}
+
+.postCard {
+  padding: 25px;
+
+  background: var(--card);
+
+  border: 1px solid var(--border);
+
+  border-radius: 18px;
+}
+
+.postCard h3 {
+  margin: 15px 0;
+
+  text-transform: capitalize;
+}
+
+.postCard p {
+  color: var(--muted);
+
+  line-height: 1.7;
+}
+
+/* LOGIN */
+
+.auth {
+  min-height: 80vh;
+
+  display: grid;
+
+  place-items: center;
+}
+
+.loginCard {
+  width: min(430px, 90%);
+
+  padding: 45px;
+
+  background: var(--card);
+
+  border: 1px solid var(--border);
+
+  border-radius: 20px;
+
+  text-align: center;
+}
+
+.authLogo {
+  width: 65px;
+
+  height: 65px;
+
+  border-radius: 18px;
+
+  margin: 0 auto 20px;
+
+  font-size: 30px;
+}
+
+.loginCard h1 {
+  font-family: "Space Grotesk";
+
+  margin: 12px 0;
+}
+
+.loginCard p {
+  color: var(--muted);
+
+  line-height: 1.6;
+
+  margin-bottom: 20px;
+}
+
+.loginCard input {
+  width: 100%;
+
+  padding: 14px;
+
+  background: #090914;
+
+  border: 1px solid var(--border);
+
+  color: white;
+
+  border-radius: 10px;
+
+  margin-bottom: 15px;
+
+  outline: none;
+}
+
+.full {
+  width: 100%;
+}
+
+/* FORM */
+
+.postForm {
+  max-width: 750px;
+
+  padding: 30px;
+
+  background: var(--card);
+
+  border: 1px solid var(--border);
+
+  border-radius: 18px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.postForm label {
+  margin-top: 10px;
+
+  font-weight: 600;
+}
+
+.postForm input,
+.postForm textarea,
+.postForm select {
+  padding: 14px;
+
+  background: #090914;
+
+  color: white;
+
+  border: 1px solid var(--border);
+
+  border-radius: 10px;
+
+  outline: none;
+}
+
+.postForm textarea {
+  resize: vertical;
+}
+
+.character {
+  text-align: right;
+
+  color: var(--muted);
+
+  font-size: 12px;
+}
+
+/* LOADING */
+
+.loading {
+  padding: 30px;
+
+  text-align: center;
+
+  color: var(--cyan);
+}
+
+.error {
+  padding: 15px;
+
+  background: rgba(244,63,94,.1);
+
+  border: 1px solid #f43f5e;
+
+  border-radius: 10px;
+
+  margin-bottom: 20px;
+}
+
+.error button {
+  margin-left: 15px;
+
+  padding: 7px 12px;
+
+  border: 0;
+
+  border-radius: 6px;
+}
+
+/* MOBILE */
+
+@media(max-width:850px) {
+
+  .navbar {
+    padding: 0 20px;
+  }
+
+  .navLinks button {
+    padding: 8px;
+  }
+
+  .userGrid,
+  .postGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .heading {
+    display: block;
+  }
+
+  .heading h1 {
+    font-size: 38px;
+  }
+
+  .profile {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .heroButtons {
+    flex-direction: column;
+  }
+
+}
